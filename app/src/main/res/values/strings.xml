@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">TODO List</string>
+    <string name="main_activity__add_task_btn__text">Добавить</string>
+</resources>
