@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //tasksRepository = new TasksRepositoryDBImpl(this, "tasks.db");
         tasksRepository = new TasksRepositoryNetworkImpl();
         tasksAdapter = new TasksListAdapter(this, tasksRepository);
         ListView lv = (ListView)findViewById(R.id.main_activity_list);
@@ -46,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
                 final EditText et = new EditText(MainActivity.this);
                 new AlertDialog.Builder(MainActivity.this)
                         .setView(et)
-                        .setTitle("Создание задачи")
-                        .setMessage("Введите название")
+                        .setTitle(R.string.main_activity__create_task_dialog__title_text)
+                        .setMessage(R.string.main_activity__create_task_dialog__message_text)
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
